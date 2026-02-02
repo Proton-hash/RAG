@@ -1,0 +1,54 @@
+services:
+  elasticsearch:
+    image: docker.elastic.co/elasticsearch/elasticsearch:8.11.0
+    environment:
+      - discovery.type=single-node
+      - xpack.security.enabled=false
+      - "ES_JAVA_OPTS=-Xms512m -Xmx512m"
+    ports:
+      - "9200:9200"
+    volumes:
+      - es_data:/usr/share/elasticsearch/data
+    healthcheck:
+      test: ["CMD-SHELL", "curl -s -o /dev/null -w '%{http_code}' http://localhost:9200/_cluster/health || exit 1"]
+      interval: 10s
+      timeout: 5s
+      retries: 10
+      start_period: 30s
+
+  app:
+    build: .
+    ports:
+      - "8501:8501"
+    env_file:
+      - .env
+    environment:
+      - ES_HOST=http://elasticsearch:9200
+      - DATA_DIR=/app/data
+    volumes:
+      - app_data:/app/data
+    depends_on:
+      elasticsearch:
+        condition: service_healthy
+    entrypoint: ["python", "scripts/wait-for-es.py"]
+    command: ["streamlit", "run", "app.py", "--server.port=8501", "--server.address=0.0.0.0"]
+
+  pipeline:
+    build: .
+    env_file:
+      - .env
+    environment:
+      - ES_HOST=http://elasticsearch:9200
+      - DATA_DIR=/app/data
+    volumes:
+      - app_data:/app/data
+    depends_on:
+      elasticsearch:
+        condition: service_healthy
+    profiles:
+      - pipeline
+    command: ["python", "main.py"]
+
+volumes:
+  es_data:
+  app_data:

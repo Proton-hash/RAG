@@ -284,35 +284,3 @@ class RAGPipeline:
         """Close connections."""
         self.es_client.close()
         logger.info("RAG Pipeline closed")
-
-
-def create_rag_pipeline(
-    groq_api_key: str,
-    es_host: str = "http://localhost:9200",
-    es_username: Optional[str] = None,
-    es_password: Optional[str] = None,
-    es_api_key: Optional[str] = None,
-    index_name: str = "github_projects",
-) -> RAGPipeline:
-    """
-    Convenience function to create a RAG pipeline.
-
-    Args:
-        groq_api_key: Groq API key.
-        es_host: Elasticsearch host.
-        es_username: Elasticsearch username.
-        es_password: Elasticsearch password.
-        es_api_key: Elasticsearch API key.
-        index_name: Index name.
-
-    Returns:
-        Initialized RAG pipeline.
-    """
-    return RAGPipeline(
-        groq_api_key=groq_api_key,
-        es_host=es_host,
-        es_username=es_username,
-        es_password=es_password,
-        es_api_key=es_api_key,
-        index_name=index_name,
-    )

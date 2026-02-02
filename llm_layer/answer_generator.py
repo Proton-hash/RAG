@@ -258,52 +258,12 @@ class AnswerGenerator:
         return self.generate_answer(question, combined_results, include_commits=False)
 
     def summarize_project(self, project_data: Dict[str, Any]) -> str:
-        """
-        Generate a natural language summary of a single project.
-
-        Args:
-            project_data: Project data from Elasticsearch.
-
-        Returns:
-            Project summary.
-        """
-        # Create a mock search result with just this project
+        """Generate a natural language summary of a single project."""
         mock_result = {
             "hits": {
                 "total": {"value": 1},
                 "hits": [{"_source": project_data}]
             }
         }
-        
         question = f"Summarize the {project_data.get('name', 'project')} repository"
         return self.generate_answer(question, mock_result, include_commits=True)
-
-    def test_answer_generation(
-        self,
-        test_cases: List[tuple[str, Dict[str, Any]]],
-    ):
-        """
-        Test answer generation with multiple cases.
-
-        Args:
-            test_cases: List of (question, search_results) tuples.
-
-        Returns:
-            List of (question, answer, success) tuples.
-        """
-        results = []
-        for question, search_results in test_cases:
-            try:
-                answer = self.generate_answer(question, search_results)
-                results.append((question, answer, True))
-                print(f"✓ Question: {question}")
-                print(f"  Answer: {answer}\n")
-            except Exception as e:
-                results.append((question, str(e), False))
-                print(f"✗ Question: {question}")
-                print(f"  Error: {e}\n")
-        
-        success_rate = sum(1 for _, _, success in results if success) / len(results) * 100
-        print(f"Success rate: {success_rate:.1f}% ({sum(1 for _, _, s in results if s)}/{len(results)})")
-        
-        return results

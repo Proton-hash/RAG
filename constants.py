@@ -2,7 +2,12 @@
 
 from pathlib import Path
 
-DEFAULT_PROJECTS_DIR = Path("data/raw/projects")
-DEFAULT_COMMITS_DIR = Path("data/raw/commits")
-DEFAULT_PROCESSED_DIR = Path("data/processed")
+try:
+    from config import DATA_DIR
+except ImportError:
+    DATA_DIR = Path("data")
+
+DEFAULT_PROJECTS_DIR = DATA_DIR / "raw" / "projects"
+DEFAULT_COMMITS_DIR = DATA_DIR / "raw" / "commits"
+DEFAULT_PROCESSED_DIR = DATA_DIR / "processed"
 PAGE_SIZE = 100

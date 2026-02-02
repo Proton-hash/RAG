@@ -5,12 +5,20 @@ Main entry point and orchestrator for the RAG data ingestion pipeline.
 import argparse
 import json
 import logging
-import os
 import sys
 from pathlib import Path
 
+from config import (
+    ES_API_KEY,
+    ES_HOST,
+    ES_INDEX,
+    ES_PASSWORD,
+    ES_USERNAME,
+    LOG_FORMAT,
+    require_github_token,
+)
 from data_ingestion import GitHubAPIClient, fetch_all_commits, fetch_all_projects
-from constants import DEFAULT_COMMITS_DIR, DEFAULT_PROJECTS_DIR
+from constants import DEFAULT_COMMITS_DIR, DEFAULT_PROJECTS_DIR, DEFAULT_PROCESSED_DIR
 from data_processing.normalizer import normalize_projects_and_commits
 from data_processing.indexer import index_normalized_projects
 
@@ -102,15 +110,16 @@ def run_pipeline(
         logger.info("Step 2: Skipping commits fetch")
 
     # Step 3: Normalize and combine projects with commits
-    normalized_file = Path("data/processed/normalized_projects.json")
+    normalized_file = DEFAULT_PROCESSED_DIR / "normalized_projects.json"
     if not skip_normalization:
         logger.info("Step 3: Normalizing projects and commits data")
-        normalized_projects = normalize_projects_and_commits()
+        normalized_projects = normalize_projects_and_commits(
+            projects_dir=projects_dir,
+            commits_dir=commits_dir,
+        )
         result["normalized_count"] = len(normalized_projects)
         
-        # Save normalized data
-        processed_dir = Path("data/processed")
-        processed_dir.mkdir(parents=True, exist_ok=True)
+        DEFAULT_PROCESSED_DIR.mkdir(parents=True, exist_ok=True)
         
         with open(normalized_file, "w", encoding="utf-8") as f:
             json.dump(normalized_projects, f, ensure_ascii=False, indent=2)
@@ -198,8 +207,8 @@ def main() -> int:
     parser.add_argument(
         "--es-host",
         type=str,
-        default="http://localhost:9200",
-        help="Elasticsearch host URL (default: http://localhost:9200)",
+        default=ES_HOST,
+        help="Elasticsearch host URL",
     )
     parser.add_argument(
         "--es-username",
@@ -219,8 +228,8 @@ def main() -> int:
     parser.add_argument(
         "--es-index",
         type=str,
-        default="github_projects",
-        help="Elasticsearch index name (default: github_projects)",
+        default=ES_INDEX,
+        help="Elasticsearch index name",
     )
     parser.add_argument(
         "--recreate-index",
@@ -235,20 +244,37 @@ def main() -> int:
     )
     args = parser.parse_args()
 
-    logging.basicConfig(
-        level=logging.DEBUG if args.verbose else logging.INFO,
-        format="%(asctime)s - %(name)s - %(levelname)s - %(message)s",
-    )
+    if LOG_FORMAT == "json":
+        logging.root.handlers.clear()
+        handler = logging.StreamHandler()
 
-    token = os.environ.get("GITHUB_TOKEN")
-    if not token:
-        logger.error("Set GITHUB_TOKEN environment variable")
+        class JsonFormatter(logging.Formatter):
+            def format(self, record):
+                return json.dumps({
+                    "time": self.formatTime(record),
+                    "level": record.levelname,
+                    "name": record.name,
+                    "message": record.getMessage(),
+                }, default=str)
+
+        handler.setFormatter(JsonFormatter())
+        logging.root.addHandler(handler)
+    else:
+        logging.basicConfig(
+            level=logging.DEBUG if args.verbose else logging.INFO,
+            format="%(asctime)s - %(name)s - %(levelname)s - %(message)s",
+        )
+    logging.root.setLevel(logging.DEBUG if args.verbose else logging.INFO)
+
+    try:
+        token = require_github_token()
+    except ValueError as e:
+        logger.error("%s", e)
         return 1
 
-    # Get Elasticsearch credentials from environment if not provided via CLI
-    es_username = args.es_username or os.environ.get("ES_USERNAME")
-    es_password = args.es_password or os.environ.get("ES_PASSWORD")
-    es_api_key = args.es_api_key or os.environ.get("ES_API_KEY")
+    es_username = args.es_username or ES_USERNAME
+    es_password = args.es_password or ES_PASSWORD
+    es_api_key = args.es_api_key or ES_API_KEY
 
     try:
         result = run_pipeline(
@@ -266,30 +292,10 @@ def main() -> int:
             es_index_name=args.es_index,
             recreate_index=args.recreate_index,
         )
-        print("\n" + "="*60)
-        print("Pipeline Complete")
-        print("="*60)
-        print(f"Projects fetched: {result['projects_count']}")
-        if result["commits_by_repo"]:
-            for repo, commits in list(result["commits_by_repo"].items())[:5]:  # Show first 5
-                print(f"  {repo}: {len(commits)} commits")
-            if len(result["commits_by_repo"]) > 5:
-                print(f"  ... and {len(result['commits_by_repo']) - 5} more repos")
-            print(f"Total commits: {result['total_commits']}")
-        if result["normalized_count"] > 0:
-            print(f"Normalized projects: {result['normalized_count']}")
+        print("\nPipeline Complete")
+        print(f"  Projects: {result['projects_count']} | Commits: {result['total_commits']} | Normalized: {result['normalized_count']}")
         if result["es_indexed"] > 0:
-            print(f"\nElasticsearch Indexing:")
-            print(f"  Indexed: {result['es_indexed']} projects")
-            print(f"  Errors: {result['es_errors']}")
-            if result["es_stats"]:
-                stats = result["es_stats"]
-                print(f"  Total projects in index: {stats.get('total_projects', 0)}")
-                print(f"  Total commits in index: {stats.get('total_commits', 0)}")
-                print(f"  Average stars: {stats.get('avg_stars', 0):.2f}")
-                if stats.get("top_languages"):
-                    print(f"  Top languages: {', '.join([lang['language'] for lang in stats['top_languages'][:3]])}")
-        print("="*60)
+            print(f"  ES: {result['es_indexed']} indexed, {result['es_errors']} errors")
         return 0
     except Exception as e:
         logger.exception("Pipeline failed: %s", e)
