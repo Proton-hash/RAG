@@ -1,0 +1,242 @@
+[
+  {
+    "sha": "73d93c150c8ecf0dddda0bfd9412aa3bd7674a92",
+    "node_id": "C_kwDOMo1cF9oAKDczZDkzYzE1MGM4ZWNmMGRkZGRhMGJmZDk0MTJhYTNiZDc2NzRhOTI",
+    "commit": {
+      "author": {
+        "name": "Proton-hash",
+        "email": "hamzaalikhan19322@gmail.com",
+        "date": "2024-08-27T17:42:59Z"
+      },
+      "committer": {
+        "name": "GitHub",
+        "email": "noreply@github.com",
+        "date": "2024-08-27T17:42:59Z"
+      },
+      "message": "Create requirements.txt",
+      "tree": {
+        "sha": "5af15de2cc59ad99baf57aa787c21561ab554e43",
+        "url": "https://api.github.com/repos/Proton-hash/Conversational-AI---Human-Like-Agent-FYP-/git/trees/5af15de2cc59ad99baf57aa787c21561ab554e43"
+      },
+      "url": "https://api.github.com/repos/Proton-hash/Conversational-AI---Human-Like-Agent-FYP-/git/commits/73d93c150c8ecf0dddda0bfd9412aa3bd7674a92",
+      "comment_count": 0,
+      "verification": {
+        "verified": true,
+        "reason": "valid",
+        "signature": "-----BEGIN PGP SIGNATURE-----\n\nwsFcBAABCAAQBQJmzhAjCRC1aQ7uu5UhlAAA/g4QADzRx8ff8u8De39eUEv9h+HC\nifTpDURyn8pe7mdPxArspgqHNDK0oUvHPNo7IpiqXetOMcxdW3D2bqpBtnoFSvbt\n+XoM8lOoJDf725METFxUTlnFAiPi0ff5PU7o7uOGdBAl8uS00kRoqBBYTAaWnAaf\nkG0gmO/sdnypfBiGRAqlUsjnAPgC8NFuOo7wIzJg5Lfde2sPCSOEN7n8TZLCwBbi\nL5/WPpYoc5rfz4i/1NctwLqpNORatbF/0Q25OmFYmOgMc+JsTxwaF2Vre1WSEWzo\nUhM0odDM3zghTN1+jfzYfLCKekkA6DaPaMwMgGO/tmsjjkZjYIPih+6+RH/n1+Oe\n45Gcz0sjABkoPo/GZOW+TTH8C1A4P79JhwNz+Z64vbppOWgAfiAzTqMFzXtlvanj\nMKP+lm+9cIF+N54hq51nLvWxNcUKD5xqf2j+BqWiXpgpFkpktmRsyOy93LuoxKjU\nJ6jBUU+ajiCCA9q5z+O4eoPnIKr2nvfeY19WcDKjpo0zEHSeZNkP0Wvz85vJ7M+M\nYHfxhD/u8gSUK3vjzx8q5R/kh90SM0Im053UkLeXHZCWFgG2mftCSJOseW+nB39M\nsQrQe4JKreYvWvubpjE04MFk0ROrPtnVCPceHbv4tvYpJCtuV2RUnkirIOEqjIOf\nqqIEUINjlzQnr/NTJDzw\n=K5oj\n-----END PGP SIGNATURE-----\n",
+        "payload": "tree 5af15de2cc59ad99baf57aa787c21561ab554e43\nparent 6ddd8b3c613f0026fcaf2d8bb71547d6462cbde2\nauthor Proton-hash <hamzaalikhan19322@gmail.com> 1724780579 -0700\ncommitter GitHub <noreply@github.com> 1724780579 -0700\n\nCreate requirements.txt",
+        "verified_at": "2025-02-13T05:03:32Z"
+      }
+    },
+    "url": "https://api.github.com/repos/Proton-hash/Conversational-AI---Human-Like-Agent-FYP-/commits/73d93c150c8ecf0dddda0bfd9412aa3bd7674a92",
+    "html_url": "https://github.com/Proton-hash/Conversational-AI---Human-Like-Agent-FYP-/commit/73d93c150c8ecf0dddda0bfd9412aa3bd7674a92",
+    "comments_url": "https://api.github.com/repos/Proton-hash/Conversational-AI---Human-Like-Agent-FYP-/commits/73d93c150c8ecf0dddda0bfd9412aa3bd7674a92/comments",
+    "author": {
+      "login": "Proton-hash",
+      "id": 179370306,
+      "node_id": "U_kgDOCrD5Qg",
+      "avatar_url": "https://avatars.githubusercontent.com/u/179370306?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/Proton-hash",
+      "html_url": "https://github.com/Proton-hash",
+      "followers_url": "https://api.github.com/users/Proton-hash/followers",
+      "following_url": "https://api.github.com/users/Proton-hash/following{/other_user}",
+      "gists_url": "https://api.github.com/users/Proton-hash/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/Proton-hash/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/Proton-hash/subscriptions",
+      "organizations_url": "https://api.github.com/users/Proton-hash/orgs",
+      "repos_url": "https://api.github.com/users/Proton-hash/repos",
+      "events_url": "https://api.github.com/users/Proton-hash/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/Proton-hash/received_events",
+      "type": "User",
+      "user_view_type": "public",
+      "site_admin": false
+    },
+    "committer": {
+      "login": "web-flow",
+      "id": 19864447,
+      "node_id": "MDQ6VXNlcjE5ODY0NDQ3",
+      "avatar_url": "https://avatars.githubusercontent.com/u/19864447?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/web-flow",
+      "html_url": "https://github.com/web-flow",
+      "followers_url": "https://api.github.com/users/web-flow/followers",
+      "following_url": "https://api.github.com/users/web-flow/following{/other_user}",
+      "gists_url": "https://api.github.com/users/web-flow/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/web-flow/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/web-flow/subscriptions",
+      "organizations_url": "https://api.github.com/users/web-flow/orgs",
+      "repos_url": "https://api.github.com/users/web-flow/repos",
+      "events_url": "https://api.github.com/users/web-flow/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/web-flow/received_events",
+      "type": "User",
+      "user_view_type": "public",
+      "site_admin": false
+    },
+    "parents": [
+      {
+        "sha": "6ddd8b3c613f0026fcaf2d8bb71547d6462cbde2",
+        "url": "https://api.github.com/repos/Proton-hash/Conversational-AI---Human-Like-Agent-FYP-/commits/6ddd8b3c613f0026fcaf2d8bb71547d6462cbde2",
+        "html_url": "https://github.com/Proton-hash/Conversational-AI---Human-Like-Agent-FYP-/commit/6ddd8b3c613f0026fcaf2d8bb71547d6462cbde2"
+      }
+    ]
+  },
+  {
+    "sha": "6ddd8b3c613f0026fcaf2d8bb71547d6462cbde2",
+    "node_id": "C_kwDOMo1cF9oAKDZkZGQ4YjNjNjEzZjAwMjZmY2FmMmQ4YmI3MTU0N2Q2NDYyY2JkZTI",
+    "commit": {
+      "author": {
+        "name": "Proton-hash",
+        "email": "hamzaalikhan19322@gmail.com",
+        "date": "2024-08-27T17:42:31Z"
+      },
+      "committer": {
+        "name": "GitHub",
+        "email": "noreply@github.com",
+        "date": "2024-08-27T17:42:31Z"
+      },
+      "message": "Create README.md",
+      "tree": {
+        "sha": "1c7b8600fc90f47167c3a43f136ede4ee1555b2b",
+        "url": "https://api.github.com/repos/Proton-hash/Conversational-AI---Human-Like-Agent-FYP-/git/trees/1c7b8600fc90f47167c3a43f136ede4ee1555b2b"
+      },
+      "url": "https://api.github.com/repos/Proton-hash/Conversational-AI---Human-Like-Agent-FYP-/git/commits/6ddd8b3c613f0026fcaf2d8bb71547d6462cbde2",
+      "comment_count": 0,
+      "verification": {
+        "verified": true,
+        "reason": "valid",
+        "signature": "-----BEGIN PGP SIGNATURE-----\n\nwsFcBAABCAAQBQJmzhAHCRC1aQ7uu5UhlAAAVhkQAFNNrkOQ7GzP/zsRSwlnABXc\nxOJX5e/G4mTJ345tvsEZUqbwZ7TWrL8zG6Prf5t7+IPIurS3Sq4d4pJw25aL0FjQ\nre4hzUj/2h3l9YT/XBlxnJsfqU1OdHJxFJDLoTYyxBr9To561z4lrUeLqRjiiXru\n3mCIyPkn5NlFaF/5kz7sban2oJSdXRimmjKBNM6PKXEvetK9XGGjyJwIutGl61vp\nwlY1ZLY/UuK1GY7O5T/1i+5kUDE/QldzuaLFC1cUultQj2rwPJKkMHcgTxEvs5fc\nzYw1pw6HqpZ3llNMYCmRnl9wep1a0fav/c/GLsVXemQMVKP9AxU9j9bGmGmImz2D\n2lxd0N7q5mKUUJtt3ZVF/zMbv4Z0BU/hWVCL19ophWwR1A7YSq4xUyz5OqcwPAOd\nh8hQWLiOX4OXM034Q9/oz/3p1setzN+vRX7wVI7lySoiIV32C2prUZ+aEforWzZG\nyiJhhmZeB6Moqf/nTh7ndDWI3/CJavWLnZFHZ3TE79w7ITx8kGnXRhEAEEDVInnw\nOY8AE97i+vltJoi7JSWJkCdnL61KnIZKlrkExvcHyDxS3kcmTKY42B/VjyOjZsv+\nw8XtcVPyI01BScYuHa/pCiTiEIo/wM7qaQZpc1K5ki5MvNrf5rRuc5ZO0c4WE+IP\ntTXTlmWzMkxks8r06smi\n=0+5A\n-----END PGP SIGNATURE-----\n",
+        "payload": "tree 1c7b8600fc90f47167c3a43f136ede4ee1555b2b\nparent 31b14a1da1df1fdc599eca038ee730246687843a\nauthor Proton-hash <hamzaalikhan19322@gmail.com> 1724780551 -0700\ncommitter GitHub <noreply@github.com> 1724780551 -0700\n\nCreate README.md",
+        "verified_at": "2024-12-02T01:38:19Z"
+      }
+    },
+    "url": "https://api.github.com/repos/Proton-hash/Conversational-AI---Human-Like-Agent-FYP-/commits/6ddd8b3c613f0026fcaf2d8bb71547d6462cbde2",
+    "html_url": "https://github.com/Proton-hash/Conversational-AI---Human-Like-Agent-FYP-/commit/6ddd8b3c613f0026fcaf2d8bb71547d6462cbde2",
+    "comments_url": "https://api.github.com/repos/Proton-hash/Conversational-AI---Human-Like-Agent-FYP-/commits/6ddd8b3c613f0026fcaf2d8bb71547d6462cbde2/comments",
+    "author": {
+      "login": "Proton-hash",
+      "id": 179370306,
+      "node_id": "U_kgDOCrD5Qg",
+      "avatar_url": "https://avatars.githubusercontent.com/u/179370306?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/Proton-hash",
+      "html_url": "https://github.com/Proton-hash",
+      "followers_url": "https://api.github.com/users/Proton-hash/followers",
+      "following_url": "https://api.github.com/users/Proton-hash/following{/other_user}",
+      "gists_url": "https://api.github.com/users/Proton-hash/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/Proton-hash/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/Proton-hash/subscriptions",
+      "organizations_url": "https://api.github.com/users/Proton-hash/orgs",
+      "repos_url": "https://api.github.com/users/Proton-hash/repos",
+      "events_url": "https://api.github.com/users/Proton-hash/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/Proton-hash/received_events",
+      "type": "User",
+      "user_view_type": "public",
+      "site_admin": false
+    },
+    "committer": {
+      "login": "web-flow",
+      "id": 19864447,
+      "node_id": "MDQ6VXNlcjE5ODY0NDQ3",
+      "avatar_url": "https://avatars.githubusercontent.com/u/19864447?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/web-flow",
+      "html_url": "https://github.com/web-flow",
+      "followers_url": "https://api.github.com/users/web-flow/followers",
+      "following_url": "https://api.github.com/users/web-flow/following{/other_user}",
+      "gists_url": "https://api.github.com/users/web-flow/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/web-flow/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/web-flow/subscriptions",
+      "organizations_url": "https://api.github.com/users/web-flow/orgs",
+      "repos_url": "https://api.github.com/users/web-flow/repos",
+      "events_url": "https://api.github.com/users/web-flow/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/web-flow/received_events",
+      "type": "User",
+      "user_view_type": "public",
+      "site_admin": false
+    },
+    "parents": [
+      {
+        "sha": "31b14a1da1df1fdc599eca038ee730246687843a",
+        "url": "https://api.github.com/repos/Proton-hash/Conversational-AI---Human-Like-Agent-FYP-/commits/31b14a1da1df1fdc599eca038ee730246687843a",
+        "html_url": "https://github.com/Proton-hash/Conversational-AI---Human-Like-Agent-FYP-/commit/31b14a1da1df1fdc599eca038ee730246687843a"
+      }
+    ]
+  },
+  {
+    "sha": "31b14a1da1df1fdc599eca038ee730246687843a",
+    "node_id": "C_kwDOMo1cF9oAKDMxYjE0YTFkYTFkZjFmZGM1OTllY2EwMzhlZTczMDI0NjY4Nzg0M2E",
+    "commit": {
+      "author": {
+        "name": "Proton-hash",
+        "email": "hamzaalikhan19322@gmail.com",
+        "date": "2024-08-27T17:27:56Z"
+      },
+      "committer": {
+        "name": "Proton-hash",
+        "email": "hamzaalikhan19322@gmail.com",
+        "date": "2024-08-27T17:27:56Z"
+      },
+      "message": "initial Commit",
+      "tree": {
+        "sha": "693821aec751cfa9814fc19dc03a39a2311f1f7b",
+        "url": "https://api.github.com/repos/Proton-hash/Conversational-AI---Human-Like-Agent-FYP-/git/trees/693821aec751cfa9814fc19dc03a39a2311f1f7b"
+      },
+      "url": "https://api.github.com/repos/Proton-hash/Conversational-AI---Human-Like-Agent-FYP-/git/commits/31b14a1da1df1fdc599eca038ee730246687843a",
+      "comment_count": 0,
+      "verification": {
+        "verified": false,
+        "reason": "unsigned",
+        "signature": null,
+        "payload": null,
+        "verified_at": null
+      }
+    },
+    "url": "https://api.github.com/repos/Proton-hash/Conversational-AI---Human-Like-Agent-FYP-/commits/31b14a1da1df1fdc599eca038ee730246687843a",
+    "html_url": "https://github.com/Proton-hash/Conversational-AI---Human-Like-Agent-FYP-/commit/31b14a1da1df1fdc599eca038ee730246687843a",
+    "comments_url": "https://api.github.com/repos/Proton-hash/Conversational-AI---Human-Like-Agent-FYP-/commits/31b14a1da1df1fdc599eca038ee730246687843a/comments",
+    "author": {
+      "login": "Proton-hash",
+      "id": 179370306,
+      "node_id": "U_kgDOCrD5Qg",
+      "avatar_url": "https://avatars.githubusercontent.com/u/179370306?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/Proton-hash",
+      "html_url": "https://github.com/Proton-hash",
+      "followers_url": "https://api.github.com/users/Proton-hash/followers",
+      "following_url": "https://api.github.com/users/Proton-hash/following{/other_user}",
+      "gists_url": "https://api.github.com/users/Proton-hash/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/Proton-hash/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/Proton-hash/subscriptions",
+      "organizations_url": "https://api.github.com/users/Proton-hash/orgs",
+      "repos_url": "https://api.github.com/users/Proton-hash/repos",
+      "events_url": "https://api.github.com/users/Proton-hash/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/Proton-hash/received_events",
+      "type": "User",
+      "user_view_type": "public",
+      "site_admin": false
+    },
+    "committer": {
+      "login": "Proton-hash",
+      "id": 179370306,
+      "node_id": "U_kgDOCrD5Qg",
+      "avatar_url": "https://avatars.githubusercontent.com/u/179370306?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/Proton-hash",
+      "html_url": "https://github.com/Proton-hash",
+      "followers_url": "https://api.github.com/users/Proton-hash/followers",
+      "following_url": "https://api.github.com/users/Proton-hash/following{/other_user}",
+      "gists_url": "https://api.github.com/users/Proton-hash/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/Proton-hash/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/Proton-hash/subscriptions",
+      "organizations_url": "https://api.github.com/users/Proton-hash/orgs",
+      "repos_url": "https://api.github.com/users/Proton-hash/repos",
+      "events_url": "https://api.github.com/users/Proton-hash/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/Proton-hash/received_events",
+      "type": "User",
+      "user_view_type": "public",
+      "site_admin": false
+    },
+    "parents": []
+  }
+]
