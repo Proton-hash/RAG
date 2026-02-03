@@ -1,6 +1,8 @@
 import os
 from llm_layer.rag_pipeline import RAGPipeline
+import load_dotenv
 
+load_dotenv()
 GROQ_API_KEY = os.environ.get("GROQ_API_KEY")
 ES_HOST = "http://localhost:9200"
 INDEX_NAME = "github_projects"
@@ -14,3 +16,4 @@ pipeline = RAGPipeline(
 question = "How many projects are there in the index?"
 result = pipeline.ask(question)
 print(result)
+

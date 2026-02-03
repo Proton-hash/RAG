@@ -45,6 +45,7 @@ services:
     depends_on:
       elasticsearch:
         condition: service_healthy
+    entrypoint: ["python", "scripts/wait-for-es.py"]
     profiles:
       - pipeline
     command: ["python", "main.py"]

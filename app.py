@@ -38,6 +38,6 @@ else:
             st.warning("Enter a question")
         else:
             with st.spinner("Thinking..."):
-                result = pipeline.ask(question, return_metadata=True)
+                result = pipeline.ask(question, include_commits = False)
                 st.subheader("Answer")
                 st.write(result["answer"])

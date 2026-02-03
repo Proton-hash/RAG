@@ -31,6 +31,8 @@ def main() -> int:
         print("Elasticsearch not ready after 30s", file=sys.stderr)
         return 1
 
+    time.sleep(5)
+
     args = sys.argv[1:]
     if not args:
         return 0

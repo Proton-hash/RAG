@@ -11,6 +11,62 @@ from data_processing.es_client import ElasticsearchClient
 
 logger = logging.getLogger(__name__)
 
+PROJECTS_INDEX_MAPPINGS = {
+    "properties": {
+        "id": {"type": "long"},
+        "node_id": {"type": "keyword"},
+        "name": {"type": "text", "fields": {"keyword": {"type": "keyword"}}},
+        "full_name": {"type": "text", "fields": {"keyword": {"type": "keyword"}}},
+        "private": {"type": "boolean"},
+        "description": {"type": "text"},
+        "fork": {"type": "boolean"},
+        "html_url": {"type": "keyword"},
+        "created_at": {"type": "date"},
+        "updated_at": {"type": "date"},
+        "pushed_at": {"type": "date"},
+        "size": {"type": "integer"},
+        "stargazers_count": {"type": "integer"},
+        "watchers_count": {"type": "integer"},
+        "language": {"type": "keyword"},
+        "forks_count": {"type": "integer"},
+        "open_issues_count": {"type": "integer"},
+        "topics": {"type": "keyword"},
+        "default_branch": {"type": "keyword"},
+        "owner": {
+            "properties": {
+                "login": {"type": "keyword"},
+                "id": {"type": "long"},
+                "type": {"type": "keyword"},
+                "avatar_url": {"type": "keyword"},
+            }
+        },
+        "commits": {
+            "type": "nested",
+            "properties": {
+                "sha": {"type": "keyword"},
+                "commit": {
+                    "properties": {
+                        "message": {"type": "text"},
+                        "author": {
+                            "properties": {
+                                "name": {"type": "keyword"},
+                                "email": {"type": "keyword"},
+                                "date": {"type": "date"},
+                            }
+                        },
+                        "committer": {
+                            "properties": {
+                                "name": {"type": "keyword"},
+                                "email": {"type": "keyword"},
+                                "date": {"type": "date"},
+                            }
+                        },
+                    }
+                },
+            },
+        },
+    }
+}
 
 # Index settings
 PROJECTS_INDEX_SETTINGS = {
